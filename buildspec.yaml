@@ -20,6 +20,6 @@ steps:
     command: |
       ./gradlew build
 outputArtifacts:
-- name: gradle-build-scan-quickstart.jar
+- name: gradleBuildScanQuickstart
   type: BINARY
   location: build/libs/gradle-build-scan-quickstart.jar

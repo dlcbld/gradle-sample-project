@@ -17,15 +17,16 @@ steps:
       cd ${OCI_WORKSPACE_DIR}/TestBuildSource1
       mvn clean install
       java -jar target/my-app-1.0-SNAPSHOT.jar
+      mv target/my-app-1.0-SNAPSHOT.jar buildSource1.jar
   - type: Command
     name: "buildSource2"
     command: |
       cd ${OCI_WORKSPACE_DIR}/TestBuildSource2
       ./gradlew build
 outputArtifacts:
-- name: my-app-1.0-SNAPSHOT.jar
+- name: maven
   type: BINARY
   location: ${OCI_WORKSPACE_DIR}/TestBuildSource1/target/my-app-1.0-SNAPSHOT.jar
-- name: gradle-build-scan-quickstart.jar
+- name: gradle
   type: BINARY
   location: ${OCI_WORKSPACE_DIR}/TestBuildSource2/build/libs/gradle-build-scan-quickstart.jar
