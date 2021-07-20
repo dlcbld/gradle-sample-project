@@ -17,7 +17,6 @@ steps:
       cd ${OCI_WORKSPACE_DIR}/TestBuildSource1
       mvn clean install
       java -jar target/my-app-1.0-SNAPSHOT.jar
-      mv target/my-app-1.0-SNAPSHOT.jar buildSource1.jar
   - type: Command
     name: "buildSource2"
     command: |
