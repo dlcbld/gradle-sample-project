@@ -26,7 +26,8 @@ steps:
     name: "buildSource3"
     command: |
       cd ${OCI_WORKSPACE_DIR}/TestBuildSource3
-      ./gradlew build
+      mvn clean install
+      java -jar target/my-app-1.0-SNAPSHOT.jar
       
 outputArtifacts:
 - name: maven
@@ -35,6 +36,6 @@ outputArtifacts:
 - name: gradle
   type: BINARY
   location: ${OCI_WORKSPACE_DIR}/TestBuildSource1/build/libs/gradle-build-scan-quickstart.jar
-- name: gradle2
+- name: maven2
   type: BINARY
-  location: ${OCI_WORKSPACE_DIR}/TestBuildSource3/build/libs/gradle-build-scan-quickstart.jar
+  location: ${OCI_WORKSPACE_DIR}/TestBuildSource3/target/my-app-1.0-SNAPSHOT.jar
