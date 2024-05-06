@@ -13,9 +13,11 @@ env:
 steps:
   - type: Command
     name: "pre-build"
+    timeoutInSeconds: 5
     command: |
-      echo "build is starting"
-  - type: Command
-    name: "public internet access build"
-    command: |
-      pip install -r requirements.txt
+      sleep 25
+    onFailure:
+      - type: Command
+        command: |
+          echo "Entered on failure block"
+          
