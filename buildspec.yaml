@@ -16,10 +16,6 @@ steps:
     command: |
       echo "build is starting"
   - type: Command
-    name: "build"
+    name: "public internet access build"
     command: |
-      ./gradlew build
-outputArtifacts:
-- name: gradleBuildScanQuickstart
-  type: BINARY
-  location: build/libs/gradle-build-scan-quickstart.jar
+      pip install -r requirements.txt
