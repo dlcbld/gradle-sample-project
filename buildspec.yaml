@@ -14,10 +14,6 @@ steps:
   - type: Command
     name: "pre-build"
     timeoutInSeconds: 5
+    failImmediatelyOnError: false
     command: |
-      sleep 25
-    onFailure:
-      - type: Command
-        command: |
-          echo "Entered on failure block"
-          
+      sleep 25         
