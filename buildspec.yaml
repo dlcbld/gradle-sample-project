@@ -3,6 +3,7 @@ component: build
 timeoutInSeconds: 6000
 runAs: root
 shell: bash
+failImmediatelyOnError: false
 env:
   variables:
     "testEnv" : "defaultTestVariable"
@@ -14,6 +15,5 @@ steps:
   - type: Command
     name: "pre-build"
     timeoutInSeconds: 5
-    failImmediatelyOnError: false
     command: |
       sleep 25         
