@@ -14,7 +14,7 @@ inputArtifacts:
 
 steps:
   - type: Command
-    name: "pre-build"
+    name: "Print input artifact contents"
     timeoutInSeconds: 500
     command: |
       head -n 25 ${OCI_PRIMARY_SOURCE_DIR}/pom.xml
