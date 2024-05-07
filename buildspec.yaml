@@ -6,18 +6,15 @@ shell: bash
 env:
   variables:
     "testEnv" : "defaultTestVariable"
-  exportedVariables:
-    - VERS
-    - param1
+inputArtifacts:
+  - name: artifact-name
+    type: URL
+    url: https://objectstorage.us-ashburn-1.oraclecloud.com/p/JhvYThishjVpSH6cDBzsPIiSs8TleWraBlcLsEPqk3F0mOafg6ebmjM51PMxwRNB/n/idllbnfszw6v/b/UNIT_TESTING_FILES-DO_NOT_DELETE/o/integ-testing-DO-NOT-DELETE-pom.xml
+    location: ${OCI_PRIMARY_SOURCE_DIR}/pom.xml
 
 steps:
   - type: Command
     name: "pre-build"
-    timeoutInSeconds: 5
+    timeoutInSeconds: 500
     command: |
-      sleep 25
-    onFailure:
-      - type: Command
-        command: |
-          echo "Entered on failure block"
-          
+      head -n 25 ${OCI_PRIMARY_SOURCE_DIR}/pom.xml
