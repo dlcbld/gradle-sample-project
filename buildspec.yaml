@@ -5,19 +5,49 @@ runAs: root
 shell: bash
 env:
   variables:
-    "testEnv" : "defaultTestVariable"
+    "oci_stage_id" : "dummyValue"
+    "oci_pipeline_id" : "dummyValue"
+    "oci_build_run_id" : "dummyValue"
+    "oci_trigger_commit_hash" : "dummyValue"
+    "oci_trigger_source_branch_name" : "dummyValue"
+    "oci_trigger_source_url" : "dummyValue"
+    "oci_primary_source_dir" : "dummyValue"
+    "oci_workspace_dir" : "dummyValue"
+    "oci_build_stage_name" : "dummyValue"
+    "oci_primary_source_name" : "dummyValue"
+    "oci_primary_source_commit_hash" : "dummyValue"
+    "oci_primary_source_url" : "dummyValue"
+    "oci_primary_source_branch_name" : "dummyValue"
   exportedVariables:
-    - VERS
-    - param1
+    - oci_stage_id
+    - oci_pipeline_id
+    - oci_build_run_id
+    - oci_trigger_commit_hash
+    - oci_trigger_source_branch_name
+    - oci_trigger_source_url
+    - oci_primary_source_dir
+    - oci_workspace_dir
+    - oci_build_stage_name
+    - oci_primary_source_name
+    - oci_primary_source_commit_hash
+    - oci_primary_source_url
+    - oci_primary_source_branch_name
 
 steps:
   - type: Command
-    name: "pre-build"
-    timeoutInSeconds: 5
+    name: "Setting predefined variable"
+    timeoutInSeconds: 60
     command: |
-      sleep 25
-    onFailure:
-      - type: Command
-        command: |
-          echo "Entered on failure block"
-          
+      oci_stage_id=${OCI_STAGE_ID}    
+      oci_pipeline_id=${OCI_PIPELINE_ID}    
+      oci_build_run_id=${OCI_BUILD_RUN_ID}    
+      oci_trigger_commit_hash=${OCI_TRIGGER_COMMIT_HASH}    
+      oci_trigger_source_branch_name=${OCI_TRIGGER_SOURCE_BRANCH_NAME}    
+      oci_trigger_source_url=${OCI_TRIGGER_SOURCE_URL}    
+      oci_primary_source_dir=${OCI_PRIMARY_SOURCE_DIR}    
+      oci_workspace_dir=${OCI_WORKSPACE_DIR}    
+      oci_build_stage_name=${OCI_BUILD_STAGE_NAME}    
+      oci_primary_source_name=${OCI_PRIMARY_SOURCE_NAME}    
+      oci_primary_source_commit_hash=${OCI_PRIMARY_SOURCE_COMMIT_HASH}    
+      oci_primary_source_url=${OCI_PRIMARY_SOURCE_URL}    
+      oci_primary_source_branch_name=${OCI_PRIMARY_SOURCE_BRANCH_NAME}    
