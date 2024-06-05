@@ -6,6 +6,7 @@ shell: bash
 env:
   variables:
     "testEnv" : "defaultTestVariable"
+    "primaryCodeRepoCommitHash" : "000"
   exportedVariables:
     - VERS
     - param1
@@ -15,6 +16,7 @@ steps:
     name: "pre-build"
     command: |
       echo "build is starting"
+      export primaryCodeRepoCommitHash=${OCI_PRIMARY_SOURCE_COMMIT_HASH}
   - type: Command
     name: "build"
     command: |
