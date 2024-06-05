@@ -10,7 +10,7 @@ env:
   exportedVariables:
     - VERS
     - param1
-
+    - primaryCodeRepoCommitHash
 steps:
   - type: Command
     name: "pre-build step"
