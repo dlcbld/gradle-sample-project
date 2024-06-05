@@ -13,7 +13,7 @@ env:
     - primaryCodeRepoCommitHash
 steps:
   - type: Command
-    name: "pre-build step"
+    name: "pre-build"
     command: |
       echo "build is starting"
       export primaryCodeRepoCommitHash=${OCI_PRIMARY_SOURCE_COMMIT_HASH}
