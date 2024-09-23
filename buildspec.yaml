@@ -9,7 +9,7 @@ env:
 inputArtifacts:
   - name: artifact-name
     type: URL
-    url: https://objectstorage.us-ashburn-1.oraclecloud.com/p/JhvYThishjVpSH6cDBzsPIiSs8TleWraBlcLsEPqk3F0mOafg6ebmjM51PMxwRNB/n/idllbnfszw6v/b/UNIT_TESTING_FILES-DO_NOT_DELETE/o/integ-testing-DO-NOT-DELETE-pom.xml
+    url: https://objectstorage.us-ashburn-1.oraclecloud.com/p/wdVD2ij8bm0WXU9Q1H_nXFva7596ItQ4GjqZ-4g6DUlgGSsBcx3Oa0yyL0DRqpna/n/idllbnfszw6v/b/UNIT_TESTING_FILES-DO_NOT_DELETE/o/integ-testing-DO-NOT-DELETE-pom.xml
     location: ${OCI_PRIMARY_SOURCE_DIR}/pom.xml
 
 steps:
